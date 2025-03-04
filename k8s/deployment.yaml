@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-cv-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-cv-app
+  template:
+    metadata:
+      labels:
+        app: react-cv-app
+    spec:
+      containers:
+      - name: react-cv-app
+        image: 730335336517.dkr.ecr.eu-west-2.amazonaws.com/react-cv-app:latest
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: ecr-secret
+
