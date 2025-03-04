@@ -5,8 +5,8 @@ import "./index.css"; // Import the CSS file
 
 const App = () => {
   const [tasks, setTasks] = useState([
-    { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Deploy on GitHub Pages", completed: false },
+    { id: 1, text: "Buy Groceries", completed: false },
+    { id: 2, text: "Finish React App", completed: false },
   ]);
 
   const addTask = (text) => {
