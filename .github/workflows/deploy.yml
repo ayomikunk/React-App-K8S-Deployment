@@ -41,6 +41,9 @@ jobs:
       run: |
         cat ~/.kube/config # Debugging step to check the kubeconfig
 
+    - name: Verify kubectl access
+      run: |
+        kubectl get nodes # Verifying if kubectl can communicate with EKS cluster
     - name: Deploy to Amazon EKS
       run: |
         kubectl apply -f k8s/deployment.yaml
