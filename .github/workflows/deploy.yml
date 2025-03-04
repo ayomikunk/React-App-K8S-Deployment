@@ -37,6 +37,10 @@ jobs:
       run: |
         aws eks update-kubeconfig --name ${{ secrets.CLUSTER_NAME }} --region ${{ secrets.AWS_REGION }}
 
+    - name: Check Kubeconfig
+      run: |
+        cat ~/.kube/config # Debugging step to check the kubeconfig
+
     - name: Deploy to Amazon EKS
       run: |
         kubectl apply -f k8s/deployment.yaml
